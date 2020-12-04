@@ -1,6 +1,6 @@
-if(token) {
+if (bugbattle_token) {
 	const BugBattle = window.BugBattle.default;
-	BugBattle.initialize(token, BugBattle.FEEDBACK_BUTTON);
+	BugBattle.initialize(bugbattle_token, BugBattle.FEEDBACK_BUTTON);
 } else {
 	console.warn('Bugbattle:', 'Token not set')
 }

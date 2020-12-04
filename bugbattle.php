@@ -75,9 +75,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-bugbattle.php';
  * @since    1.0.0
  */
 function run_bugbattle() {
-
 	$plugin = new Bugbattle();
 	$plugin->run();
-
 }
 run_bugbattle();
