@@ -65,6 +65,14 @@ register_deactivation_hook( __FILE__, 'deactivate_bugbattle' );
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-bugbattle.php';
 
+add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'bugbattle_add_plugin_page_settings_link');
+function bugbattle_add_plugin_page_settings_link( $links ) {
+	$links[] = '<a href="' .
+		admin_url( 'options-general.php?page=crb_carbon_fields_container_bugbattle.php' ) .
+		'">' . __('Settings') . '</a>';
+	return $links;
+}
+
 /**
  * Begins execution of the plugin.
  *
