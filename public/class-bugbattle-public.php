@@ -85,10 +85,17 @@ class Bugbattle_Public {
 	 */
 	public function enqueue_scripts() {
         $bugbattle_token = carbon_get_theme_option('bugbattle_token');
-        if($bugbattle_token) {
+        if ($bugbattle_token) {
 			wp_register_script( 'bugbattle-sdk-js', 'https://jssdk.bugbattle.io/latest/index.js', null, null, true );
-			wp_localize_script( $this->plugin_name, 'bugbattle_token', $bugbattle_token );
-            wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/bugbattle-public.js', array( 'bugbattle-sdk-js' ), $this->version, false );
+            wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/bugbattle-public.js', array( 'bugbattle-sdk-js' ), $this->version, true );
+			
+			wp_localize_script($this->plugin_name, 'bugbattle_token', $bugbattle_token);
+			$bugbattle_color = carbon_get_theme_option('bugbattle_color');
+			wp_localize_script($this->plugin_name, 'bugbattle_color', $bugbattle_color);
+			$bugbattle_enable_privacy_policy = carbon_get_theme_option('bugbattle_enable_privacy_policy');
+			wp_localize_script($this->plugin_name, 'bugbattle_enable_privacy_policy', $bugbattle_enable_privacy_policy);
+			$bugbattle_privacy_policy_url = carbon_get_theme_option('bugbattle_privacy_policy_url');
+			wp_localize_script($this->plugin_name, 'bugbattle_privacy_policy_url', $bugbattle_privacy_policy_url);
         }
 	}
 

@@ -119,7 +119,16 @@ class Bugbattle_Admin {
         Container::make('theme_options', __('Bugbattle'))
             ->set_page_parent( 'options-general.php' )
             ->add_fields(array(
-                Field::make('text', 'bugbattle_token', 'SDK Token'),
+                Field::make('text', 'bugbattle_token', 'SDK Token')->set_required( true )->set_help_text("Create your SDK Token within the <a href=\"https://app.bugbattle.io/\">Bugbattle Dashboard.</a>"),
+            ))
+            ->add_fields(array(
+                Field::make('color', 'bugbattle_color', 'Custom Color')->set_help_text("Change the default color of the Bugbattle widget."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_enable_privacy_policy', 'Enable Privacy Policy')->set_help_text("Enable or disable the privacy policy check."),
+            ))
+            ->add_fields(array(
+                Field::make('text', 'bugbattle_privacy_policy_url', 'Custom URL for your Privacy Policy')->set_help_text("Optionally set your own privacy policy for Bugbattle."),
             ));
     }
 

@@ -9,19 +9,19 @@ require plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://bugbattle.io
+ * @link              https://www.bugbattle.io
  * @since             1.0.0
  * @package           Bugbattle
  *
  * @wordpress-plugin
  * Plugin Name:       Bugbattle
- * Plugin URI:        https://bugbattle.io
+ * Plugin URI:        https://www.bugbattle.io
  * Description:       Bugbattle helps developers build the best software faster. It is your affordable in-app bug reporting tool for apps, websites and industrial applications.
  * Version:           1.0.0
  * Author:            BugBattle
- * Author URI:        https://bugbattle.io
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Author URI:        https://www.bugbattle.io
+ * License:           Commercial
+ * License URI:       https://github.com/BugBattle/Wordpress/blob/main/README.txt
  * Text Domain:       bugbattle
  * Domain Path:       /languages
  */
