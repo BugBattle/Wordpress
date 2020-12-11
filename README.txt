@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: bugbattle
 Tags: bug-tracking, bug-reporting, user-feedback, feedback
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Requires at least: 4.1.5
+Tested up to: 5.6
+Stable tag: 1.0
 License: Commercial
 License URI: https://github.com/BugBattle/Wordpress/blob/main/README.txt
 
