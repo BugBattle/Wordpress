@@ -1,0 +1,14 @@
+{
+    "name": "bugbattle/bugbattle-wp",
+    "description": "Integrates Bugbattle into Wordpress",
+    "type": "wordpress-plugin",
+    "require": {
+        "htmlburger/carbon-fields": "^3.2"
+    },
+    "authors": [
+        {
+            "name": "Florian Böhler",
+            "email": "florian@boehlerbrothers.com"
+        }
+    ]
+}
