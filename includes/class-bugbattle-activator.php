@@ -30,7 +30,16 @@ class Bugbattle_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
+        $custom_cap = 'report_bugs';
+        $grant      = true;
 
+        $roles = ['administrator', 'contributor', 'editor', 'author'];
+
+        foreach ($roles as $roleName) {
+            $role = get_role($roleName);
+            if (!$role->has_cap( $custom_cap )) {
+                $role->add_cap( $custom_cap, $grant );
+            }
+        }
 	}
-
 }

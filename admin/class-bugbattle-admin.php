@@ -129,6 +129,9 @@ class Bugbattle_Admin {
             ))
             ->add_fields(array(
                 Field::make('text', 'bugbattle_privacy_policy_url', 'Custom URL for your Privacy Policy')->set_help_text("Optionally set your own privacy policy for Bugbattle."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_editors_only', 'Enable just for logged in editors')->set_default_value(false)->set_help_text('Widget will only be visible for users with editor or higher role.')
             ));
     }
 

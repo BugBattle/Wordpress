@@ -96,6 +96,18 @@ class Bugbattle_Public {
 			wp_localize_script($this->plugin_name, 'bugbattle_enable_privacy_policy', $bugbattle_enable_privacy_policy);
 			$bugbattle_privacy_policy_url = carbon_get_theme_option('bugbattle_privacy_policy_url');
 			wp_localize_script($this->plugin_name, 'bugbattle_privacy_policy_url', $bugbattle_privacy_policy_url);
+
+            $bugbattle_editors_only = carbon_get_theme_option('bugbattle_editors_only');
+            if($bugbattle_editors_only) {
+                if ( current_user_can( 'report_bugs' ) ) {
+                    wp_localize_script($this->plugin_name, 'bugbattle_has_permission', 'true');
+                } else {
+                    wp_localize_script($this->plugin_name, 'bugbattle_has_permission', 'false');
+                }
+            } else {
+                wp_localize_script($this->plugin_name, 'bugbattle_has_permission', 'true');
+            }
+
         }
 	}
 

@@ -30,7 +30,17 @@ class Bugbattle_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
+        global $wp_roles;
 
+        $delete_caps = array(
+            'report_bugs'
+        );
+
+        foreach ($delete_caps as $cap) {
+            foreach (array_keys($wp_roles->roles) as $role) {
+                $wp_roles->remove_cap($role, $cap);
+            }
+        }
 	}
 
 }
