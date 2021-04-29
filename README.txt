@@ -2,8 +2,8 @@
 Contributors: bugbattle
 Tags: bug-tracking, bug-reporting, user-feedback, feedback
 Requires at least: 4.1.5
-Tested up to: 5.6
-Stable tag: 1.0
+Tested up to: 5.7.1
+Stable tag: 1.1
 License: Commercial
 License URI: https://github.com/BugBattle/Wordpress/blob/main/README.txt
 
@@ -33,3 +33,6 @@ e.g.
 
 = 1.0 =
 * Initial release for WordPress
+
+= 1.1 =
+* Added options for Replays, Network Logs, Crash Detector & "Logged in users only".
