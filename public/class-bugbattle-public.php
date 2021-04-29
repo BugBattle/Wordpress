@@ -72,10 +72,7 @@ class Bugbattle_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		wp_enqueue_style('bugbattle-sdk-css', 'https://jssdk.bugbattle.io/latest/index.css');
-		//wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/bugbattle-public.css', array(), $this->version, 'all' );
-
+		
 	}
 
 	/**
@@ -90,16 +87,22 @@ class Bugbattle_Public {
             wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/bugbattle-public.js', array( 'bugbattle-sdk-js' ), $this->version, true );
 			
 			wp_localize_script($this->plugin_name, 'bugbattle_token', $bugbattle_token);
+
 			$bugbattle_color = carbon_get_theme_option('bugbattle_color');
 			wp_localize_script($this->plugin_name, 'bugbattle_color', $bugbattle_color);
+
 			$bugbattle_enable_crash_detector = carbon_get_theme_option('bugbattle_enable_crash_detector');
 			wp_localize_script($this->plugin_name, 'bugbattle_enable_crash_detector', $bugbattle_enable_crash_detector);
+
 			$bugbattle_enable_replays = carbon_get_theme_option('bugbattle_enable_replays');
 			wp_localize_script($this->plugin_name, 'bugbattle_enable_replays', $bugbattle_enable_replays);
+
 			$bugbattle_enable_network_logs = carbon_get_theme_option('bugbattle_enable_network_logs');
 			wp_localize_script($this->plugin_name, 'bugbattle_enable_network_logs', $bugbattle_enable_network_logs);
+
 			$bugbattle_enable_privacy_policy = carbon_get_theme_option('bugbattle_enable_privacy_policy');
 			wp_localize_script($this->plugin_name, 'bugbattle_enable_privacy_policy', $bugbattle_enable_privacy_policy);
+
 			$bugbattle_privacy_policy_url = carbon_get_theme_option('bugbattle_privacy_policy_url');
 			if(!empty(bugbattle_privacy_policy_url)) {
 				wp_localize_script($this->plugin_name, 'bugbattle_privacy_policy_url', $bugbattle_privacy_policy_url);
@@ -115,7 +118,6 @@ class Bugbattle_Public {
             } else {
                 wp_localize_script($this->plugin_name, 'bugbattle_has_permission', 'true');
             }
-
         }
 	}
 
