@@ -125,10 +125,22 @@ class Bugbattle_Admin {
                 Field::make('color', 'bugbattle_color', 'Custom Color')->set_help_text("Change the default color of the Bugbattle widget."),
             ))
             ->add_fields(array(
-                Field::make('checkbox', 'bugbattle_enable_privacy_policy', 'Enable Privacy Policy')->set_help_text("Enable or disable the privacy policy check."),
+                Field::make('checkbox', 'bugbattle_enable_crash_detector', 'Enable Crash Detector')->set_default_value(false)->set_help_text("Enable or disable the Bugbattle crash detector. This will automatically send a silent bug report in the background, once a JS crash occurs."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_enable_replays', 'Enable Replays')->set_default_value(false)->set_help_text("Enable or disable Bugbattle Replays."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_enable_network_logs', 'Enable Network Logs')->set_default_value(false)->set_help_text("Enable or disable network logs."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_enable_privacy_policy', 'Enable Privacy Policy')->set_default_value(false)->set_help_text("Enable or disable the privacy policy check."),
             ))
             ->add_fields(array(
                 Field::make('text', 'bugbattle_privacy_policy_url', 'Custom URL for your Privacy Policy')->set_help_text("Optionally set your own privacy policy for Bugbattle."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_editors_only', 'Enable just for logged in editors')->set_default_value(false)->set_help_text('Widget will only be visible for users with editor or higher role.')
             ));
     }
 
