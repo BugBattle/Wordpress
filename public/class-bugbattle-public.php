@@ -92,6 +92,12 @@ class Bugbattle_Public {
 			wp_localize_script($this->plugin_name, 'bugbattle_token', $bugbattle_token);
 			$bugbattle_color = carbon_get_theme_option('bugbattle_color');
 			wp_localize_script($this->plugin_name, 'bugbattle_color', $bugbattle_color);
+			$bugbattle_enable_crash_detector = carbon_get_theme_option('bugbattle_enable_crash_detector');
+			wp_localize_script($this->plugin_name, 'bugbattle_enable_crash_detector', $bugbattle_enable_crash_detector);
+			$bugbattle_enable_replays = carbon_get_theme_option('bugbattle_enable_replays');
+			wp_localize_script($this->plugin_name, 'bugbattle_enable_replays', $bugbattle_enable_replays);
+			$bugbattle_enable_network_logs = carbon_get_theme_option('bugbattle_enable_network_logs');
+			wp_localize_script($this->plugin_name, 'bugbattle_enable_network_logs', $bugbattle_enable_network_logs);
 			$bugbattle_enable_privacy_policy = carbon_get_theme_option('bugbattle_enable_privacy_policy');
 			wp_localize_script($this->plugin_name, 'bugbattle_enable_privacy_policy', $bugbattle_enable_privacy_policy);
 			$bugbattle_privacy_policy_url = carbon_get_theme_option('bugbattle_privacy_policy_url');

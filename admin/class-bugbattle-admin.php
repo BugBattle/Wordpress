@@ -125,6 +125,15 @@ class Bugbattle_Admin {
                 Field::make('color', 'bugbattle_color', 'Custom Color')->set_help_text("Change the default color of the Bugbattle widget."),
             ))
             ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_enable_crash_detector', 'Enable Crash Detector')->set_help_text("Enable or disable the Bugbattle crash detector. This will automatically send a silent bug report in the background, once a JS crash occurs."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_enable_replays', 'Enable Replays')->set_help_text("Enable or disable Bugbattle Replays."),
+            ))
+            ->add_fields(array(
+                Field::make('checkbox', 'bugbattle_enable_network_logs', 'Enable Network Logs')->set_help_text("Enable or disable network logs."),
+            ))
+            ->add_fields(array(
                 Field::make('checkbox', 'bugbattle_enable_privacy_policy', 'Enable Privacy Policy')->set_help_text("Enable or disable the privacy policy check."),
             ))
             ->add_fields(array(

@@ -5,6 +5,15 @@ if (bugbattle_token) {
 		BugBattle.enablePrivacyPolicy(bugbattle_enable_privacy_policy);
 		BugBattle.setPrivacyPolicyUrl(bugbattle_privacy_policy_url);
 	}
+	if (bugbattle_enable_crash_detector) {
+		BugBattle.enableCrashDetector(true, true);
+	}
+	if (bugbattle_enable_replays) {
+		BugBattle.enableReplays(true);
+	}
+	if (bugbattle_enable_network_logs) {
+		BugBattle.enableNetworkLogger();
+	}
 	if (bugbattle_color) {
 		BugBattle.setMainColor(bugbattle_color);
 	}
