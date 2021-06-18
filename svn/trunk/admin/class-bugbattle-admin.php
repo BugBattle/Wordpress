@@ -1,6 +1,8 @@
 <?php
+
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
+
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -11,7 +13,8 @@ use Carbon_Fields\Field;
  * @subpackage Bugbattle/admin
  */
 
-class Bugbattle_Admin {
+class Bugbattle_Admin
+{
 
 	/**
 	 * The ID of this plugin.
@@ -38,42 +41,44 @@ class Bugbattle_Admin {
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct($plugin_name, $version)
+	{
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
 		$this->load_dependencies();
-
 	}
 
-    /**
-     * Load the required dependencies for the Admin facing functionality.
-     *
-     * Include the following files that make up the plugin:
-     *
-     * - Carbon
-     *
-     *
-     * @since    1.0.0
-     * @access   private
-     */
-    private function load_dependencies() {
+	/**
+	 * Load the required dependencies for the Admin facing functionality.
+	 *
+	 * Include the following files that make up the plugin:
+	 *
+	 * - Carbon
+	 *
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function load_dependencies()
+	{
 
-        /**
-         * The class responsible for orchestrating the actions and filters of the
-         * core plugin.
-         */
-        //require_once plugin_dir_path( dirname( __FILE__ ) ) .  'admin/class-bugbattle-settings.php';
+		/**
+		 * The class responsible for orchestrating the actions and filters of the
+		 * core plugin.
+		 */
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) .  'admin/class-bugbattle-settings.php';
 
-    }
+	}
 
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -87,8 +92,7 @@ class Bugbattle_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/bugbattle-admin.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/bugbattle-admin.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -96,7 +100,8 @@ class Bugbattle_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -110,43 +115,23 @@ class Bugbattle_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/bugbattle-admin.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/bugbattle-admin.js', array('jquery'), $this->version, false);
 	}
 
-    public function setup_settings_ui()
-    {
-        Container::make('theme_options', __('Bugbattle'))
-            ->set_page_parent( 'options-general.php' )
-            ->add_fields(array(
-                Field::make('text', 'bugbattle_token', 'SDK Token')->set_required( true )->set_help_text("Create your SDK Token within the <a href=\"https://app.bugbattle.io/\">Bugbattle Dashboard.</a>"),
-            ))
-            ->add_fields(array(
-                Field::make('color', 'bugbattle_color', 'Custom Color')->set_help_text("Change the default color of the Bugbattle widget."),
-            ))
-            ->add_fields(array(
-                Field::make('checkbox', 'bugbattle_enable_crash_detector', 'Enable Crash Detector')->set_default_value(false)->set_help_text("Enable or disable the Bugbattle crash detector. This will automatically send a silent bug report in the background, once a JS crash occurs."),
-            ))
-            ->add_fields(array(
-                Field::make('checkbox', 'bugbattle_enable_replays', 'Enable Replays')->set_default_value(false)->set_help_text("Enable or disable Bugbattle Replays."),
-            ))
-            ->add_fields(array(
-                Field::make('checkbox', 'bugbattle_enable_network_logs', 'Enable Network Logs')->set_default_value(false)->set_help_text("Enable or disable network logs."),
-            ))
-            ->add_fields(array(
-                Field::make('checkbox', 'bugbattle_enable_privacy_policy', 'Enable Privacy Policy')->set_default_value(false)->set_help_text("Enable or disable the privacy policy check."),
-            ))
-            ->add_fields(array(
-                Field::make('text', 'bugbattle_privacy_policy_url', 'Custom URL for your Privacy Policy')->set_help_text("Optionally set your own privacy policy for Bugbattle."),
-            ))
-            ->add_fields(array(
-                Field::make('checkbox', 'bugbattle_editors_only', 'Enable just for logged in editors')->set_default_value(false)->set_help_text('Widget will only be visible for users with editor or higher role.')
-            ));
-    }
+	public function setup_settings_ui()
+	{
+		Container::make('theme_options', __('Bugbattle'))
+			->set_page_parent('options-general.php')
+			->add_fields(array(
+				Field::make('text', 'bugbattle_token', 'SDK Token')->set_required(true)->set_help_text("Create your SDK Token within the <a href=\"https://app.bugbattle.io/\">Bugbattle Dashboard.</a> (14-days free trial)"),
+			))
+			->add_fields(array(
+				Field::make('checkbox', 'bugbattle_editors_only', 'Enable just for logged in editors')->set_default_value(false)->set_help_text('Widget will only be visible for users with editor or higher role.')
+			));
+	}
 
-    public function crb_load()
-    {
-        \Carbon_Fields\Carbon_Fields::boot();
-    }
-
+	public function crb_load()
+	{
+		\Carbon_Fields\Carbon_Fields::boot();
+	}
 }
