@@ -83,11 +83,11 @@ class Gleap_Public
 	 */
 	public function enqueue_scripts()
 	{
-		if(FLBuilderModel::is_builder_active()) {
+		if(class_exists('FLBuilderModel') && FLBuilderModel::is_builder_active()) {
 			return;
 		}
 
-		if (did_action('elementor/loaded') && \Elementor\Plugin::$instance->editor->is_edit_mode()) {
+		if(class_exists('\Elementor\Plugin') && \Elementor\Plugin::$instance->preview->is_preview()) {
 			return;
 		}
 		
