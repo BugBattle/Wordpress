@@ -5,11 +5,11 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://bugbattle.io
+ * @link       https://gleap.io
  * @since      1.0.0
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/admin/partials
+ * @package    Gleap
+ * @subpackage Gleap/admin/partials
  */
 ?>
 

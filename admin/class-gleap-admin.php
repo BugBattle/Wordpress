@@ -6,14 +6,14 @@ use Carbon_Fields\Field;
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://bugbattle.io
+ * @link       https://gleap.io
  * @since      1.0.0
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/admin
+ * @package    Gleap
+ * @subpackage Gleap/admin
  */
 
-class Bugbattle_Admin
+class Gleap_Admin
 {
 
 	/**
@@ -68,7 +68,7 @@ class Bugbattle_Admin
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		//require_once plugin_dir_path( dirname( __FILE__ ) ) .  'admin/class-bugbattle-settings.php';
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) .  'admin/class-gleap-settings.php';
 
 	}
 
@@ -84,15 +84,15 @@ class Bugbattle_Admin
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Bugbattle_Loader as all of the hooks are defined
+		 * defined in Gleap_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Bugbattle_Loader will then create the relationship
+		 * The Gleap_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/bugbattle-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/gleap-admin.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -107,26 +107,26 @@ class Bugbattle_Admin
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Bugbattle_Loader as all of the hooks are defined
+		 * defined in Gleap_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Bugbattle_Loader will then create the relationship
+		 * The Gleap_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/bugbattle-admin.js', array('jquery'), $this->version, false);
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/gleap-admin.js', array('jquery'), $this->version, false);
 	}
 
 	public function setup_settings_ui()
 	{
-		Container::make('theme_options', __('Bugbattle'))
+		Container::make('theme_options', __('Gleap'))
 			->set_page_parent('options-general.php')
 			->add_fields(array(
-				Field::make('text', 'bugbattle_token', 'SDK Token')->set_required(true)->set_help_text("Create your SDK Token within the <a href=\"https://app.bugbattle.io/\">Bugbattle Dashboard.</a> (14-days free trial)"),
+				Field::make('text', 'gleap_token', 'SDK Token')->set_required(true)->set_help_text("Create your SDK Token within the <a href=\"https://app.gleap.io/\">Gleap Dashboard.</a> (14-days free trial)"),
 			))
 			->add_fields(array(
-				Field::make('checkbox', 'bugbattle_editors_only', 'Enable just for logged in editors')->set_default_value(false)->set_help_text('Widget will only be visible for users with editor or higher role.')
+				Field::make('checkbox', 'gleap_editors_only', 'Enable just for logged in editors')->set_default_value(false)->set_help_text('Widget will only be visible for users with editor or higher role.')
 			));
 	}
 

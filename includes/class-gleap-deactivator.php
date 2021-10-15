@@ -3,11 +3,11 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       https://bugbattle.io
+ * @link       https://gleap.io
  * @since      1.0.0
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
+ * @package    Gleap
+ * @subpackage Gleap/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
- * @author     BugBattle <hello@bugbattle.io>
+ * @package    Gleap
+ * @subpackage Gleap/includes
+ * @author     Gleap <hello@gleap.io>
  */
-class Bugbattle_Deactivator {
+class Gleap_Deactivator {
 
 	/**
 	 * Short Description. (use period)

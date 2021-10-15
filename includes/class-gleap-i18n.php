@@ -6,11 +6,11 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://bugbattle.io
+ * @link       https://gleap.io
  * @since      1.0.0
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
+ * @package    Gleap
+ * @subpackage Gleap/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
- * @author     BugBattle <hello@bugbattle.io>
+ * @package    Gleap
+ * @subpackage Gleap/includes
+ * @author     Gleap <hello@gleap.io>
  */
-class Bugbattle_i18n {
+class Gleap_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Bugbattle_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'bugbattle',
+			'gleap',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

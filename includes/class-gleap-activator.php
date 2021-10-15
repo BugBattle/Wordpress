@@ -3,11 +3,11 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://bugbattle.io
+ * @link       https://gleap.io
  * @since      1.0.0
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
+ * @package    Gleap
+ * @subpackage Gleap/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
- * @author     BugBattle <hello@bugbattle.io>
+ * @package    Gleap
+ * @subpackage Gleap/includes
+ * @author     Gleap <hello@gleap.io>
  */
-class Bugbattle_Activator {
+class Gleap_Activator {
 
 	/**
 	 * Short Description. (use period)

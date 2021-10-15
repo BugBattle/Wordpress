@@ -3,11 +3,11 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://bugbattle.io
+ * @link       https://gleap.io
  * @since      1.0.0
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
+ * @package    Gleap
+ * @subpackage Gleap/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/includes
- * @author     BugBattle <hello@bugbattle.io>
+ * @package    Gleap
+ * @subpackage Gleap/includes
+ * @author     Gleap <hello@gleap.io>
  */
-class Bugbattle_Loader {
+class Gleap_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

@@ -3,11 +3,11 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://bugbattle.io
+ * @link       https://gleap.io
  * @since      1.0.0
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/public
+ * @package    Gleap
+ * @subpackage Gleap/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Bugbattle
- * @subpackage Bugbattle/public
- * @author     BugBattle <hello@bugbattle.io>
+ * @package    Gleap
+ * @subpackage Gleap/public
+ * @author     Gleap <hello@gleap.io>
  */
-class Bugbattle_Public
+class Gleap_Public
 {
 
 	/**
@@ -67,10 +67,10 @@ class Bugbattle_Public
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Bugbattle_Loader as all of the hooks are defined
+		 * defined in Gleap_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Bugbattle_Loader will then create the relationship
+		 * The Gleap_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -83,16 +83,24 @@ class Bugbattle_Public
 	 */
 	public function enqueue_scripts()
 	{
-		$bugbattle_token = carbon_get_theme_option('bugbattle_token');
-		if ($bugbattle_token) {
-			$bugbattle_editors_only = carbon_get_theme_option('bugbattle_editors_only');
-			if ($bugbattle_editors_only == true && !current_user_can('report_bugs')) {
+		if(FLBuilderModel::is_builder_active()) {
+			return;
+		}
+
+		if (did_action('elementor/loaded') && \Elementor\Plugin::$instance->editor->is_edit_mode()) {
+			return;
+		}
+		
+		$gleap_token = carbon_get_theme_option('gleap_token');
+		if ($gleap_token) {
+			$gleap_editors_only = carbon_get_theme_option('gleap_editors_only');
+			if ($gleap_editors_only == true && !current_user_can('report_bugs')) {
 				return;
 			}
 
-			$bugbattle_script_url = 'https://widget.bugbattle.io/widget/' . $bugbattle_token;
-			wp_register_script('bugbattle-sdk-js', $bugbattle_script_url, null, null, false);
-			wp_enqueue_script('bugbattle-sdk-js');
+			$gleap_script_url = 'https://widget.gleap.io/widget/' . $gleap_token;
+			wp_register_script('gleap-sdk-js', $gleap_script_url, null, null, false);
+			wp_enqueue_script('gleap-sdk-js');
 		}
 	}
 }
