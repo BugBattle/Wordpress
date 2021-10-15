@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: gleap
-Tags: bug-tracking, bug-reporting, user-feedback, feedback
+Tags: bug-tracking, bug-reporting, user-feedback, feedback, customer-feedback
 Requires at least: 4.1.5
 Tested up to: 5.7.1
-Stable tag: 1.1
+Stable tag: 6.0.0
 License: Commercial
 License URI: https://github.com/Gleap/Wordpress/blob/main/README.txt
 
