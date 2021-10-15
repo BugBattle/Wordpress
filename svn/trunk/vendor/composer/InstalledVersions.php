@@ -32,19 +32,19 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '8a975a1975da7b955471847453eb2210d16c9190',
-    'name' => 'bugbattle/bugbattle-wp',
+    'reference' => 'b3323e8bd3d944e2243d2c279e903923bdd0d647',
+    'name' => 'gleap/gleap-wp',
   ),
   'versions' => 
   array (
-    'bugbattle/bugbattle-wp' => 
+    'gleap/gleap-wp' => 
     array (
       'pretty_version' => 'dev-main',
       'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '8a975a1975da7b955471847453eb2210d16c9190',
+      'reference' => 'b3323e8bd3d944e2243d2c279e903923bdd0d647',
     ),
     'htmlburger/carbon-fields' => 
     array (

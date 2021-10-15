@@ -1,6 +1,6 @@
 {
-    "name": "bugbattle/bugbattle-wp",
-    "description": "Integrates Bugbattle into Wordpress",
+    "name": "gleap/gleap-wp",
+    "description": "Integrates Gleap into Wordpress",
     "type": "wordpress-plugin",
     "require": {
         "htmlburger/carbon-fields": "^3.2"
